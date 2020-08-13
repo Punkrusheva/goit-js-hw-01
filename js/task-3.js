@@ -20,8 +20,7 @@ const ACCESS_IS_ALLOWED = 'Добро пожаловать!';
 const ACCESS_DENIED = 'Доступ запрещен, неверный пароль!';
 let massage;
 
-/*const password = prompt('пароль?');
-console.log(password);
+const password = prompt('пароль?');
 
 if (password === null) {
   massage = CANCELED_BY_USER;
@@ -31,10 +30,8 @@ if (password === null) {
   massage = ACCESS_DENIED;
 }
 console.log(massage);
-*/
-// Write code under this line
 
-if (userPassword === ADMIN_PASSWORD) {
+/*if (userPassword === ADMIN_PASSWORD) {
   message = ACCESS_IS_ALLOWED;
 } else if (userPassword === null) {
   message = CANCELED_BY_USER;

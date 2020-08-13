@@ -16,64 +16,42 @@
 •	Ямайка - 120 кредитов
 */
 
-const countryName = "Китай";
-const CANCELED_BY_USER = "Отменено пользователем!";
-const NO_DELIVERY = "В выбранную страну доставка недопустима.";
-const CHINA = "Китай"
-const AUSTRALIA = "Австралия";
-const INDIA = "Индия";
-const JAMAICA = "Ямайка";
-let massage;
-let prise = 0;
-let country;
-if (countryName === null) {
-    massage = CANCELED_BY_USER;
-} else {
-    country = countryName[0].toUpperCase() + countryName.slice(1).toLowerCase();
-    console.log(country);
-    switch (country) {
-        case "":
-            prise = 100;
-            break;
-
-    }
-}
-/*const countryName = "ЧИЛИ";
-const CANCELED_BY_USER = "Отменено пользователем!";
-const NO_DELIVERY = "В выбранную страну доставка недоступна.";
-const CHINA = "Китай";
-const AUSTRALIA = "Австралия";
-const INDIA = "Индия";
-const JAMAICA = "Ямайка";
+//const countryName = 'ЧИЛИ';
+const CANCELED_BY_USER = 'Отменено пользователем!';
+const NO_DELIVERY = 'В выбранную страну доставка недоступна.';
+const CHINA = 'Китай';
+const AUSTRALIA = 'Австралия';
+const INDIA = 'Индия';
+const JAMAICA = 'Ямайка';
 let message;
 let price = 0;
 let country;
+
+let countryName = prompt('Введите страну доставки?');
+console.log(countryName);
+
 if (countryName === null) {
   message = CANCELED_BY_USER;
 } else {
-  country = countryName[0].toUpperCase() + countryName.toLowerCase().slice(1); // Write code on this line
+  country = countryName[0].toUpperCase() + countryName.toLowerCase().slice(1);
   switch (country) {
-    // Write code under this line
-    case "Китай":
+    case CHINA:
       price = 100;
       break;
-    case "Австралия":
+    case AUSTRALIA:
       price = 170;
       break;
-    case "Индия":
+    case INDIA:
       price = 80;
       break;
-    case "Ямайка":
+    case JAMAICA:
       price = 120;
       break;
     default:
-      price = 0;
+      message = NO_DELIVERY;
   }
 }
 if (price > 0) {
-  // Write code on this line
   message = `Доставка в ${country} будет стоить ${price} кредитов`;
-} else {
-  message = NO_DELIVERY;
 }
-console.log(message);*/
+console.log(message);
