@@ -13,7 +13,22 @@
   некорректного ввода, показывай alert с текстом 'Было введено не 
   число, попробуйте еще раз', при этом результат prompt плюсовать 
   к общей сумме не нужно, после чего снова пользователю предлагается 
-  ввести число в prompt.
+  ввести число в prompt.*/
+/*let input;
+let total = 0;
+input = prompt('Введи число');
+console.log(input);
+//while (input != null) {
+// }
+total = total + Number(input);
+console.log(total);*/
 let input;
 let total = 0;
-*/
+do {
+  input = prompt('Введи число');
+  if (Number(input)) {
+    input = Number(input);
+    total += Number(input);
+  }
+} while (input !== null);
+alert(`Общая сумма введенных чисел ${total}`);
