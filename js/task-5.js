@@ -6,7 +6,7 @@
 
 const checkForSpam = function (message) {
   // твой код
-  //for (const word of message.toLowerCase()) {
+
   if (
     message.toLowerCase().includes('spam') ||
     message.toLowerCase().includes('sale')
@@ -16,7 +16,7 @@ const checkForSpam = function (message) {
     return false;
   }
 };
-//.include('spam')
+
 //Вызовы функции для проверки работоспособности твоей реализации.
 
 console.log(checkForSpam('Latest technology news')); // false
