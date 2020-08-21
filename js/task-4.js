@@ -1,16 +1,31 @@
 /*Задание 4
-Напиши функцию formatString(string) которая принимает строку и форматирует ее если необходимо.
+Напиши функцию formatString(string) которая принимает строку и форматирует
+ ее если необходимо.
 
-Если длина строки не превышает 40 символов, функция возвращает ее в исходном виде.
-Если длина больше 40 символов, то функция обрезает строку до 40-ка символов и добавляет в конец строки троеточие '...', после чего возвращает укороченную версию.
-const formatString = function(string) {
+Если длина строки не превышает 40 символов, функция возвращает ее в исходном
+ виде.
+Если длина больше 40 символов, то функция обрезает строку до 40-ка символов
+ и добавляет в конец строки троеточие '...', после чего возвращает укороченную
+  версию.*/
+
+/*const formatString = function (string) {
   // твой код
-};
+  if (string.length < 40) {
+    return string;
+  }
+  return `${string.slice(0, 40)}...`;
+};*/
+function formatString(string, maxLength = 40) {
+  // Write code under this line
+  if (string.length <= maxLength) {
+    return string;
+  }
+  return `${string.slice(0, maxLength)}...`;
+}
 
-/*
- * Вызовы функции для проверки работоспособности твоей реализации.
- */
-/*console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+//Вызовы функции для проверки работоспособности твоей реализации.
+
+console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
 // вернется оригинальная строка
 
 console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
@@ -25,4 +40,3 @@ console.log(
   ),
 );
 // вернется форматированная строка
-*/
