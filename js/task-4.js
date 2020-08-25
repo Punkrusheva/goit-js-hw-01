@@ -1,42 +1,27 @@
 /*Задание 4
-Напиши функцию formatString(string) которая принимает строку и форматирует
- ее если необходимо.
+Напиши функцию countTotalSalary(employees) принимающую объект зарплат. Функция считает общую сумму запрплаты работников и возращает ее. Каждое поле объекта, передаваемого в функцию, имеет вид "имя":"зарплата".
 
-Если длина строки не превышает 40 символов, функция возвращает ее в исходном
- виде.
-Если длина больше 40 символов, то функция обрезает строку до 40-ка символов
- и добавляет в конец строки троеточие '...', после чего возвращает укороченную
-  версию.*/
-
-/*const formatString = function (string) {
+const countTotalSalary = function(employees) {
   // твой код
-  if (string.length < 40) {
-    return string;
-  }
-  return `${string.slice(0, 40)}...`;
-};*/
-function formatString(string, maxLength = 40) {
-  // Write code under this line
-  if (string.length <= maxLength) {
-    return string;
-  }
-  return `${string.slice(0, maxLength)}...`;
-}
+};
 
-//Вызовы функции для проверки работоспособности твоей реализации.
-
-console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
-// вернется оригинальная строка
-
-console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
-// вернется форматированная строка
-
-console.log(formatString('Curabitur ligula sapien.'));
-// вернется оригинальная строка
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+console.log(countTotalSalary({})); // 0
 
 console.log(
-  formatString(
-    'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
-  ),
-);
-// вернется форматированная строка
+  countTotalSalary({
+    mango: 100,
+    poly: 150,
+    alfred: 80,
+  }),
+); // 330
+
+console.log(
+  countTotalSalary({
+    kiwi: 200,
+    lux: 50,
+    chelsy: 150,
+  }),
+); // 400
