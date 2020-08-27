@@ -14,14 +14,7 @@
   число, попробуйте еще раз', при этом результат prompt плюсовать 
   к общей сумме не нужно, после чего снова пользователю предлагается 
   ввести число в prompt.*/
-/*let input;
-let total = 0;
-input = prompt('Введи число');
-console.log(input);
-//while (input != null) {
-// }
-total = total + Number(input);
-console.log(total);*/
+
 let input;
 let total = 0;
 do {
