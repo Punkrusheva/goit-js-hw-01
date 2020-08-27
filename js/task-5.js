@@ -15,8 +15,8 @@
 •	Индия - 80 кредитов
 •	Ямайка - 120 кредитов
 */
-//const countryName = 'ЧИЛИ';
 
+//const countryName = 'ЧИЛИ';
 const CANCELED_BY_USER = 'Отменено пользователем!';
 const NO_DELIVERY = 'В выбранную страну доставка недоступна.';
 const CHINA = 'Китай';

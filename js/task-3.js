@@ -11,6 +11,7 @@
 const ADMIN_PASSWORD = 'jqueryismyjam';
 let message;
 */
+
 const userPassword = 'jqueryismyjam';
 const ADMIN_PASSWORD = 'jqueryismyjam';
 
