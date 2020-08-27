@@ -1,13 +1,15 @@
 /*Задание 2
-Напиши функцию countProps(obj), считающую кол-во свойств в объекте. Функция возвращает число - количество свойств.
+Напиши функцию countProps(obj), считающую кол-во свойств в
+ объекте. Функция возвращает число - количество свойств.*/
 
-const countProps = function(obj) {
-  // твой код
+const countProps = function (obj) {
+  'use strict';
+  let number = Object.keys(obj);
+  return number.length;
 };
 
-/*
- * Вызовы функции для проверки работоспособности твоей реализации.
- */
+//Вызовы функции для проверки работоспособности твоей реализации.
+
 console.log(countProps({})); // 0
 
 console.log(countProps({ name: 'Mango', age: 2 })); // 2

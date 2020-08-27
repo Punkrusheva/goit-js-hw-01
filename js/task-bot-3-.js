@@ -1,55 +1,53 @@
-/*Задача 2-6
-Конструкция new Array(10) создаст массив, длинной в 10 элементов.
- Значения в таком массиве будут отсутствовать, т.е. не будет даже
-  undefined. Поэтому такой массив нужно заполнить значениями для
-   дальнейшего использования.
+const add = function (...args) {
+  console.log(args); // массив всех аргументов
+};
 
-Есть еще способ создания и заполнения массива - можно создать
- пустой массив [] и заполнять его методом push()
+add(1, 2, 3);
+add(1, 2, 3, 4, 5);
 
-Быстрая обработка массива
-Преимущество создания массива заданной длины перед добавлением в
- пустой массив в том, что метод push() медленнее обрабатывается.
+const a = { x: 1, y: 2 };
+const b = { x: 0, z: 3 };
 
-Если `new Array()` будет содержать более одного аргумента, то
- будет создан массив с элементами из аргументов.
-Пример:
+const c = Object.assign({}, a, b);
+console.log(c); // {x: 0, y: 2, z: 3}
 
-new Array(3);
-// [,,]
+// То же самое используя операцию spread
+const d = { ...a, ...b };
 
-new Array(1, 2, 3);
-// [1, 2, 3]
-Быстрое создание массива
-Пустой массив. Вызов new Array() создаст пустой массив []. Но
- это более медленный способ создания массива по сравнению с
-  использованием литерала. Если нужен пустой массив, то
-   рекомендуется использовать литерал массива.
+console.log(d); // {x: 0, y: 2, z: 3}
 
-const arrFast = []; // быстрее
-const arrSlow = new Array(); // медленнее
-Создание нового массива на основе преобразования данных из старого
- массива
-Напиши функцию mapArray(array), принимающую 1 параметр array -
-массив чисел. Функция создает новый массив numbers размером в
-длину массива array и заполняет его числами из массива array
-умноженными на 10. Для перебора массива и добавления новых
-значений используй цикл for. По завершению перебора массива
-array возвращается массив numbers. */
+const hotel = {
+  name: 'Resort Hotel',
+  stars: 5,
+  capacity: 100,
+};
 
-function mapArray(array) {
-  'use strict';
-  const numbers = new Array(array.length);
-  //console.log(numbers);
-  for (let i = 0; i < array.length; i += 1) {
-    // Write code under this line
-    numbers[i] = array[i] * 10;
-  }
-  return numbers;
+/*
+ * Посмотрите в консоли из каких двух элементов состоит каждый подмассив.
+ * Первый элемент это ключ свойства, второй это значение.
+ */
+const entries = Object.entries(hotel);
+console.log(entries);
+/*
+ * На каждой итерации по entries выберем первый элемент подмассива (ключ)
+ * в переменную key, а второй (значение) в переменную value
+ */
+for (const entry of entries) {
+  const key = entry[0];
+  const value = entry[1];
+
+  console.log(`${key}: ${value}`);
 }
 
-console.log(mapArray([-2, 0, 2]));
-// [-20, 0, 20]
+/*
+ * name: Resort Hotel
+ * stars: 5
+ * capacity: 100
+ */
 
-console.log(mapArray([-2.5, 0, 2.5]));
-// [-25, 0, 25]
+const houses = ['Arryn', 'Frey', 'Greyjoy', 'Stark', 'Lannister', 'Tyrell'];
+const copyOfHouses = [...houses];
+
+console.log(houses); // ['Arryn','Frey','Greyjoy','Stark','Lannister','Tyrell']
+console.log(copyOfHouses); // ['Arryn','Frey','Greyjoy','Stark','Lannister','Tyrell']
+console.log(houses === copyOfHouses); // false - разные ссылки

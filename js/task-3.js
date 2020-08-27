@@ -1,13 +1,29 @@
 /*Задание 3
-Напиши функцию findBestEmployee(employees), которая принимает объект сотрудников и возвращает имя самого продуктивного (который выполнил больше всех задач). Сотрудники и кол-во выполненых задач содержатся как свойства объекта в формате "имя":"кол-во задач".
+Напиши функцию findBestEmployee(employees), которая принимает
+объект сотрудников и возвращает имя самого продуктивного
+(который выполнил больше всех задач). Сотрудники и кол-во
+выполненых задач содержатся как свойства объекта в формате
+"имя":"кол-во задач".*/
 
-const findBestEmployee = function(employees) {
-  // твой код
+const findBestEmployee = function (employees) {
+  let productive = 0;
+  let employe;
+  let name = '';
+  ('use strict');
+  // Write code under this line
+  for (employe in employees) {
+    if (employees[employe] > productive) {
+      //console.log(employe);
+      productive = employees[employe];
+      name = employe;
+    }
+  }
+  //console.log(productive);
+  return name;
 };
 
-/*
- * Вызовы функции для проверки работоспособности твоей реализации.
- */
+//Вызовы функции для проверки работоспособности твоей реализации.
+
 console.log(
   findBestEmployee({
     ann: 29,
